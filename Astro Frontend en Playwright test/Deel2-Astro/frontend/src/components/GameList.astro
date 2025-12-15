@@ -1,0 +1,16 @@
+---
+import steamDeals from "../data/steam-deals.json";
+import GameLabel from "../components/GameLabel.astro"
+import type {IGame} from "../data/IGame";
+
+const {data} = Astro.props;
+
+
+---
+
+
+<ul id="game-list-id" class="divide-y divide-gray-200 dark:divide-gray-700">
+    {data.map((game: IGame) => (
+        <GameLabel game={game} />
+    ))}
+</ul>

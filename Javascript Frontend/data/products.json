@@ -1,0 +1,84 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Basic T-Shirt",
+            "category": "Shirts",
+            "price": 15,
+            "image": "images/shirt1.jpg",
+            "description": "A comfortable cotton t-shirt."
+        },
+        {
+            "id": 2,
+            "name": "Graphic Tee",
+            "category": "Shirts",
+            "price": 20,
+            "image": "images/shirt2.jpg",
+            "description": "A stylish t-shirt with a graphic print."
+        },
+        {
+            "id": 3,
+            "name": "Sleeveless Top",
+            "category": "Tops",
+            "price": 18,
+            "image": "images/top1.jpg",
+            "description": "A lightweight summer top."
+        },
+        {
+            "id": 4,
+            "name": "Crop Top",
+            "category": "Tops",
+            "price": 22,
+            "image": "images/top2.jpg",
+            "description": "Trendy cropped top for casual wear."
+        },
+        {
+            "id": 5,
+            "name": "Jeans",
+            "category": "Bottoms",
+            "price": 40,
+            "image": "images/bottom1.jpg",
+            "description": "Classic denim jeans with a slim fit."
+        },
+        {
+            "id": 6,
+            "name": "Joggers",
+            "category": "Bottoms",
+            "price": 35,
+            "image": "images/bottom2.jpg",
+            "description": "Comfortable joggers for everyday wear."
+        },
+        {
+            "id": 7,
+            "name": "Hoodie",
+            "category": "Hoodies",
+            "price": 45,
+            "image": "images/hoodie1.jpg",
+            "description": "A warm hoodie for chilly days."
+        },
+        {
+            "id": 8,
+            "name": "Zip-Up Hoodie",
+            "category": "Hoodies",
+            "price": 50,
+            "image": "images/hoodie2.jpg",
+            "description": "A versatile zip-up hoodie."
+        },
+        {
+            "id": 9,
+            "name": "Cap",
+            "category": "Other",
+            "price": 15,
+            "image": "images/other1.jpg",
+            "description": "A stylish cap to complete your outfit."
+        },
+        {
+            "id": 10,
+            "name": "Scarf",
+            "category": "Other",
+            "price": 25,
+            "image": "images/other2.jpg",
+            "description": "A warm and cozy scarf."
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITC2Wedstrijd", "ITC2Wedstrijd.csproj", "{6E449C1F-0989-43E0-A7DF-E7CAA69C6987}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6E449C1F-0989-43E0-A7DF-E7CAA69C6987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E449C1F-0989-43E0-A7DF-E7CAA69C6987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E449C1F-0989-43E0-A7DF-E7CAA69C6987}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6E449C1F-0989-43E0-A7DF-E7CAA69C6987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E449C1F-0989-43E0-A7DF-E7CAA69C6987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E449C1F-0989-43E0-A7DF-E7CAA69C6987}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3E56000-D36E-4189-93D9-F684A95D0DB7}
+	EndGlobalSection
+EndGlobal

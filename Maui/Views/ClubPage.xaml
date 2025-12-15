@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:ITC2Wedstrijd.ViewModels"
+             xmlns:models="clr-namespace:ITC2Wedstrijd.Models" 
+             x:Class="ITC2Wedstrijd.Views.ClubPage"
+             x:DataType="viewmodels:ClubViewModel" 
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="*" ColumnDefinitions="*, *">
+        <CollectionView Grid.Row="0" Grid.Column="0" SelectionMode="Single" ItemsSource="{Binding Club}" EmptyView="No items to display" SelectedItem="{Binding SelectedClub}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Club">
+                    <VerticalStackLayout Padding="5">
+                        <Label FontSize="14" Text="{Binding Naam}"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Fill" VerticalOptions="Center" Color="{StaticResource Primary}" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+        <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
+            <Label Text="{Binding ActieLabel}" FontSize="Header"/>
+            <Label Text="Naam" />
+            <Entry Placeholder="Naam" Text="{Binding SelectedClub.Naam}" />
+            
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Toevoegen" Command="{Binding ToevoegenCommand}"/>
+                <Button Text="Wijzigen" Command="{Binding WijzigenCommand}"/>
+                <Button Text="Verwijderen" Command="{Binding VerwijderenCommand}"/>
+                <Button Text="Deselecteren" Command="{Binding DeselecterenCommand}"/>
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
+
+
+    </Grid>
+</ContentPage>

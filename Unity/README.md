@@ -1,0 +1,4 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/xI0YG4YJ)
+
+
+Ik had een paar problemen met layering & active zetten dus in de Snakio'Game scene' staat het gameoverscreen over alles. Dit kan u op non active zetten om de rest van de scene te zien.

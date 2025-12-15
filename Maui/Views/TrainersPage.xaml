@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:ITC2Wedstrijd.ViewModels"
+             xmlns:model="clr-namespace:ITC2Wedstrijd.Models"
+             x:DataType="viewmodel:TrainersToewijzenViewModel"
+             x:Class="ITC2Wedstrijd.Views.TrainersPage"
+             Title="{Binding Title}">
+
+        
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="*,*">
+
+        
+        <BoxView 
+            BackgroundColor="DarkOrange" 
+            Grid.ColumnSpan="2"
+            Grid.Row="0"
+            HorizontalOptions="Fill" 
+            VerticalOptions="Fill"/>
+
+        
+        <StackLayout  Grid.Row="1" Grid.Column="0" Padding="10" Spacing="10">
+            <Picker ItemsSource="{Binding AllPloegs}" 
+                    ItemDisplayBinding="{Binding Naam }" 
+                    SelectedItem="{Binding SelectedPloeg}"></Picker>
+            
+            
+
+            
+            <Label Text="Beschikbare Trainers:" FontAttributes="Bold"/>
+            <CollectionView SelectionMode="Single"
+                            SelectedItem="{Binding SelectedTrainer}"
+                            ItemsSource="{Binding AvailableTrainers}"
+                            VerticalOptions="FillAndExpand"
+                            EmptyView="Geen beschikbare trainers">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Trainer">
+                        <Label FontSize="14" Text="{Binding VolledigeNaam}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+
+        
+        <StackLayout Grid.Row="1" Grid.Column="1" Padding="10" Spacing="10">
+            <Label Text="Trainers in de ploeg:" FontAttributes="Bold"/>
+            <CollectionView SelectionMode="Single"
+                            SelectedItem="{Binding SelectedTrainer}"
+                            ItemsSource="{Binding TrainersInPloeg}"
+                            EmptyView="Geen trainers in deze ploeg">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Trainer">
+                        <Label FontSize="14" Text="{Binding VolledigeNaam}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            <Button Text="Trainer Toevoegen" Command="{Binding AddTrainerCommand}"></Button>
+            <Button Text="Trainer Verwijderen" Command="{Binding RemoveTrainerCommand}"></Button>
+            
+        </StackLayout>
+        
+        
+    </Grid>
+        
+      
+        
+   
+</ContentPage>

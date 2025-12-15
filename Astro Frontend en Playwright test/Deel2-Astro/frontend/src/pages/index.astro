@@ -1,0 +1,37 @@
+---
+import Title from '../components/Title.astro';
+import Layout from '../layouts/Layout.astro';
+import SearchInput from "../components/SearchInput.astro";
+import GameList from "../components/GameList.astro";
+import steamDeals from "../data/steam-deals.json";
+import type {IGame} from "../data/IGame";
+import DisountRangeSlider from "../components/DisountRangeSlider.astro";
+
+
+
+let discountedGames: IGame[] = steamDeals.filter(games => games.isDiscounted);
+
+
+
+//De filter functies is een script die je kan terug vinden in de Layout.astro file deze zijn gedaan door direct de DOM aan te spreken.
+---
+
+
+<Layout>
+	<div class="container mx-auto py-4 space-y-8">
+
+	<Title />
+		<div class="grid grid-cols-2 gap-4">
+
+			<div class="flex items-center w-full mx-auto">
+				<SearchInput  />
+			</div>
+			<div class="relative mb-6">
+
+			<DisountRangeSlider />
+			</div>
+		</div>
+	<GameList data={discountedGames} />
+	</div>
+
+</Layout>

@@ -1,0 +1,31 @@
+﻿@* @model List<ReservatieKiesViewModel>
+
+<h1>Mijn Reservaties</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Datum</th>
+           
+            <th>Actie</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var reservatie in Model)
+        {
+            <tr>
+                <td>@reservatie.Datum.ToString("dd/MM/yyyy")</td>
+               
+                <td>
+                    @if (reservatie.MagBestellen)
+                    {
+                        <a class="btn btn-success"
+                           href="@Url.Action("Index", "Menu", new { reservatieId = reservatie.ReservatieId })">
+                            Bestellen
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table> *@

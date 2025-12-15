@@ -1,0 +1,12 @@
+﻿global using ITC2Wedstrijd.Data;
+global using ITC2Wedstrijd.Models;
+global using ITC2Wedstrijd.ViewModels;
+global using ITC2Wedstrijd.Views;
+global using Dapper;
+global using System.Data;
+global using System.Configuration;
+global using System.Collections.ObjectModel;
+global using System.ComponentModel.DataAnnotations;
+global using Microsoft.Data.SqlClient;
+global using CommunityToolkit.Mvvm.ComponentModel;
+global using CommunityToolkit.Mvvm.Input;

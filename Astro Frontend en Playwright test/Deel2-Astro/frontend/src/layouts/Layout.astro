@@ -1,0 +1,48 @@
+---
+import "../styles/global.css";
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>IT Chall 3 Astro project</title>
+	</head>
+	<body>
+		<script type="module">
+			const searchInput = document.getElementById("simple-search");
+			const sliderInput = document.getElementById("labels-range-input");
+			const list = document.getElementById("game-list-id");
+
+			const filterGames = () => {
+				const searchValue = searchInput.value.toLowerCase();
+				const sliderValue = Number(sliderInput.value);
+
+				Array.from(list.children).forEach(game => {
+					const title = game.querySelector("p").textContent.toLowerCase();
+					const discountText = game.querySelector("span").textContent.replace("%", "");
+					const discountValue = Number(discountText);
+
+					const isSearched = title.includes(searchValue);
+					const isDiscounted = discountValue >= sliderValue;
+
+					if (isSearched && isDiscounted) {
+						game.classList.remove("hidden");
+					} else {
+						game.classList.add("hidden");
+					}
+				});
+			};
+
+			searchInput.addEventListener("input", filterGames);
+			sliderInput.addEventListener("input", filterGames);
+		</script>
+		<slot />
+		<script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    </body>
+</html>
+
+

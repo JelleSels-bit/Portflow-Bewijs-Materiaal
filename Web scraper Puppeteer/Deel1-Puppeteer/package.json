@@ -1,0 +1,20 @@
+{
+  "name": "coolblue_scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --loader ts-node/esm index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "puppeteer": "latest"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}

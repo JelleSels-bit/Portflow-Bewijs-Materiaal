@@ -1,0 +1,21 @@
+---
+const {game} = Astro.props
+---
+
+
+
+
+<li data-testid="gameLabelTestId" class="py-3 sm:py-4 game-item">
+
+    <div class="flex items-center space-x-4 rtl:space-x-reverse">
+        <div class="flex-1 min-w-0">
+            <p data-testid="titleTestId" class="text-sm font-medium text-gray-900 truncate dark:text-dark">{game.title}</p>
+        </div>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+            <span data-testid="discountPercentageTestId"  class="text-green-500">{game.discountPercentage}% </span>
+        </div>
+
+    </div>
+</li>
+
+

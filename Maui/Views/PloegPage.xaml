@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:ITC2Wedstrijd.ViewModels"
+             xmlns:models="clr-namespace:ITC2Wedstrijd.Models" 
+             x:Class="ITC2Wedstrijd.Views.PloegPage"
+             x:DataType="viewmodels:PloegViewModel" 
+             Title="{Binding Title}">
+
+    <Grid RowDefinitions="*" ColumnDefinitions="*, *">
+        <CollectionView Grid.Row="0" Grid.Column="0" SelectionMode="Single" ItemsSource="{Binding Ploeg}" EmptyView="No items to display" SelectedItem="{Binding SelectedPloeg}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Ploeg">
+                    <VerticalStackLayout Padding="5">
+                        <Label FontSize="14" Text="{Binding Naam}"/>
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" HorizontalOptions="Fill" VerticalOptions="Center" Color="{StaticResource Primary}" Grid.RowSpan="1" Grid.ColumnSpan="1" />
+
+            
+        <VerticalStackLayout Grid.Row="0" Grid.Column="1" Spacing="10">
+            <Label Text="{Binding ActieLabel}" FontSize="Header"/>
+            <Label Text="Naam" />
+            <Entry Placeholder="Naam" Text="{Binding SelectedPloeg.Naam}" />
+            <Label Text="Kies een categorie" />
+            <Label Text="{Binding SelectedPloeg.Categorie.Naam}"/>
+            <Picker x:Name="PickerCategorie" ItemsSource="{Binding Categorie}" SelectedItem="{Binding SelectedPloeg.Categorie, Mode=TwoWay}"  ItemDisplayBinding="{Binding Naam}"/>
+            <Label Text="Kies een club" />
+            <Picker ItemsSource="{Binding Club}" SelectedItem="{Binding SelectedPloeg.Club}"  ItemDisplayBinding="{Binding Naam}" />
+            <Label Text="Kies een sport" />
+            <Picker ItemsSource="{Binding Sport}" SelectedItem="{Binding SelectedPloeg.Sport}"  ItemDisplayBinding="{Binding Naam}" />
+
+            <HorizontalStackLayout Spacing="10">
+                <Button Text="Toevoegen" Command="{Binding ToevoegenCommand}"/>
+                <Button Text="Wijzigen" Command="{Binding WijzigenCommand}"/>
+                <Button Text="Verwijderen" Command="{Binding VerwijderenCommand}"/>
+                <Button Text="Deselecteren" Command="{Binding DeselecterenCommand}"/>
+            </HorizontalStackLayout>
+            <Button Text="Speler toewijzen" Command="{Binding GoToToewijzenCommand}"/>
+        </VerticalStackLayout>
+
+
+
+    </Grid>
+</ContentPage>

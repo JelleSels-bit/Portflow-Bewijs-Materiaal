@@ -1,0 +1,239 @@
+﻿@model List<BestellingOverzichtViewModel>
+
+<h2>Ober Overzicht</h2>
+
+<div class="accordion" id="accordionOber">
+    @{
+        int flatIndex = 0;
+    }
+    @for (int r = 0; r < Model.Count; r++)
+    {
+        var reservatie = Model[r];
+
+        bool alleGerechtenKlaar = reservatie.Gerechten.Any() && reservatie.Gerechten.All(g => g.StatusId == 2);
+        bool alleDrankenGeleverd = reservatie.Dranken.Any() && reservatie.Dranken.All(d => d.StatusId == 3);
+
+        string headerClass = "accordion-button collapsed";
+        if (alleGerechtenKlaar) headerClass += " bg-success text-white";
+        else if (alleDrankenGeleverd) headerClass += " bg-warning text-dark";
+        else headerClass += " bg-light text-dark";
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOber@(r)">
+                <button class="@headerClass" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOber@(r)"
+                        aria-expanded="false"
+                        aria-controls="collapseOber@(r)">
+                    Tafel @reservatie.ReservatieId
+                </button>
+            </h2>
+
+            <div id="collapseOber@(r)" class="accordion-collapse collapse"
+                 aria-labelledby="headingOber@(r)">
+                <div class="accordion-body">
+
+                    <!-- BEWERK FORMULIER -->
+                    <form asp-action="Bewerken" method="post">
+
+                        <!-- GERECHTEN -->
+                        @if (reservatie.Gerechten.Any())
+                        {
+                            <h5>Gerechten</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Gerecht</th>
+                                        <th>Status / Opmerking</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < reservatie.Gerechten.Count; i++)
+                                    {
+                                        var g = reservatie.Gerechten[i];
+                                        bool disabled = !g.ProductActief;
+
+                                        <tr class="@(disabled ? "table-danger" : "")">
+                                            <td>
+                                                @g.ProductNaam
+                                                @if (!g.ProductActief)
+                                                {
+                                                    <span class="badge bg-danger ms-2">Niet beschikbaar</span>
+
+                                                    <button type="button"
+                                                            class="btn btn-sm btn-outline-danger ms-2"
+                                                            data-bs-toggle="modal"
+                                                            data-bs-target="#modalVerwijderGerecht_@g.BestellingId">
+                                                        Verwijderen
+                                                    </button>
+
+                                                    <!-- MODAL -->
+                                                    <div class="modal fade" id="modalVerwijderGerecht_@g.BestellingId" tabindex="-1" aria-hidden="true">
+                                                        <div class="modal-dialog modal-dialog-centered">
+                                                            <div class="modal-content">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title">Bevestig verwijdering</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                                                </div>
+                                                                <div class="modal-body">
+                                                                    Weet je zeker dat je dit gerecht wilt verwijderen?
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleer</button>
+                                                                    <button type="submit"
+                                                                            formaction="/Ober/VerwijderGerecht"
+                                                                            formmethod="post"
+                                                                            name="bestellingId"
+                                                                            value="@g.BestellingId"
+                                                                            class="btn btn-danger">
+                                                                        Verwijder
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="items[@flatIndex].BestellingId" value="@g.BestellingId" />
+                                                <input type="hidden" name="items[@flatIndex].StatusId"
+                                                       id="gerechtStatus_@(r)_@(i)"
+                                                       value="@g.StatusId" />
+
+                                                <div class="mb-1">
+                                                    <textarea class="form-control"
+                                                  name="items[@flatIndex].Opmerking"
+                                                  rows="2"
+                                                  @(disabled ? "readonly" : "")>@g.Opmerking</textarea>
+                                                </div>
+
+                                                <div class="btn-group">
+                                                    <button type="button"
+                                                            class="btn btn-outline-warning btn-status"
+                                                            data-target="gerechtStatus_@(r)_@(i)"
+                                                            data-value="1"
+                                                            @(disabled ? "disabled" : "")>
+                                                        In Behandeling
+                                                    </button>
+
+                                                    <button type="button"
+                                                            class="btn btn-outline-success btn-status"
+                                                            data-target="gerechtStatus_@(r)_@(i)"
+                                                            data-value="3"
+                                                            @(disabled ? "disabled" : "")>
+                                                        Geserveerd
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        flatIndex++;
+                                    }
+                                </tbody>
+                            </table>
+                        }
+
+                        <!-- DRANKEN -->
+                        @if (reservatie.Dranken.Any())
+                        {
+                            <h5>Dranken</h5>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr><th>Drank</th><th>Status</th></tr>
+                                </thead>
+                                <tbody>
+                                    @for (int i = 0; i < reservatie.Dranken.Count; i++)
+                                    {
+                                        var d = reservatie.Dranken[i];
+                                        <tr>
+                                            <td>@d.ProductNaam</td>
+                                            <td>
+                                                <input type="hidden" name="items[@flatIndex].BestellingId" value="@d.BestellingId" />
+                                                <input type="hidden" name="items[@flatIndex].StatusId"
+                                                       id="drankStatus_@(r)_@(i)"
+                                                       value="@d.StatusId" />
+
+                                                <div class="btn-group">
+                                                    <button type="button"
+                                                            class="btn btn-outline-success btn-status"
+                                                            data-target="drankStatus_@(r)_@(i)"
+                                                            data-value="3">
+                                                        Geserveerd
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        flatIndex++;
+                                    }
+                                </tbody>
+                            </table>
+                        }
+
+                        <button type="submit" class="btn btn-primary mt-2">Opslaan</button>
+                    </form>
+
+                    <!-- Bestelling volledig verwijderen modal -->
+                    <button type="button" class="btn btn-danger mt-2"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalVerwijderReservatie_@reservatie.ReservatieId">
+                        Verwijder bestelling
+                    </button>
+
+                    <div class="modal fade" id="modalVerwijderReservatie_@reservatie.ReservatieId" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Bevestig verwijdering</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Weet je zeker dat je deze bestelling wilt verwijderen?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuleer</button>
+                                    <button type="submit"
+                                            formmethod="post"
+                                            formaction="/Ober/Verwijderen"
+                                            name="reservatieId"
+                                            value="@reservatie.ReservatieId"
+                                            class="btn btn-danger">
+                                        Verwijder
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Statusbuttons
+            document.querySelectorAll(".btn-status").forEach(btn => {
+                const targetId = btn.dataset.target;
+                const input = document.getElementById(targetId);
+
+                if (input && input.value === btn.dataset.value)
+                    btn.classList.add("active");
+
+                btn.addEventListener("click", function () {
+                    if (btn.disabled) return;
+
+                    input.value = this.dataset.value;
+
+                    const group = this.parentElement;
+                    group.querySelectorAll("button").forEach(b => b.classList.remove("active"));
+                    this.classList.add("active");
+                });
+            });
+
+        });
+    </script>
+}

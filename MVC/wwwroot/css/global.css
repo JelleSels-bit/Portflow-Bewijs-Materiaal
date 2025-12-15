@@ -1,0 +1,96 @@
+﻿:root {
+    --blue-deep: #2B5071;
+    --blue-soft: #4F6F91;
+    --gold: #BE7928;
+    --gold-soft: #E8B067;
+    --ice: #E4EFF7;
+    --ice-soft: #C7D7E6;
+    --white: #ffffff;
+    --black: #000000;
+}
+
+.alex {
+    font-family: "Alex Brush", cursive !important;
+}
+
+.twinkle {
+    font-family: "Twinkle Star", cursive !important;
+}
+
+.raleway {
+    font-family: "Raleway", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+}
+
+.blue-deep {
+    color: #2B5071 !important;
+}
+
+.blue-soft {
+    color: #4F6F91 !important;
+}
+
+.gold {
+    color: #BE7928 !important;
+}
+
+.gold-soft {
+    color: #E8B067 !important;
+}
+
+.ice {
+    color: #E4EFF7 !important;
+}
+
+.ice-soft {
+    color: #C7D7E6 !important;
+}
+
+.bg-blue-deep {
+    background-color: #2B5071 !important;
+    color: #F5F5F5;
+}
+
+.bg-blue-soft {
+    background-color: #4F6F91 !important;
+    color: #F5F5F5;
+}
+
+.bg-gold {
+    background-color: #BE7928 !important;
+}
+
+.bg-gold-soft {
+    background-color: #E8B067 !important;
+}
+
+.border-blue-deep {
+    border-color: #2B5071 !important;
+}
+
+.border-gold {
+    border-color: #BE7928 !important;
+}
+
+.border-gold-soft {
+    border-color: #E8B067 !important;
+}
+.card-img-fixed {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+.tumbnail-img-fixed {
+    height: 300px;
+    object-fit: cover;
+    width: 300px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.auto-margin-top {
+    margin-top: auto;
+}
