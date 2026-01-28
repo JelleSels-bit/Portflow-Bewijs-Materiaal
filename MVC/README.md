@@ -16,7 +16,7 @@ Binnen dit project heb ik de volgende pagina’s gebouwd of eraan meegewerkt:
 
 ## Screenshots
 
-![](/MvcAssets/HomePage.png)
+![](./MvcAssets/HomePage.png)
 
 ![](/MvcAssets/Admin%20beheer%20panel.png)
 
