@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "766958635088",
+    "project_id": "beerspin-mobile-app",
+    "storage_bucket": "beerspin-mobile-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766958635088:android:a756eb912738564fd46955",
+        "android_client_info": {
+          "package_name": "com.jelle.sels.r0900822.project_mobile_dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766958635088-pp3751l4gctt7atk59j8t93gl95l52t7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.jelle.sels.r0900822.project_mobile_dev",
+            "certificate_hash": "b47c0b88fe5edef58dd4112bc6dd1af5701350fd"
+          }
+        },
+        {
+          "client_id": "766958635088-guakkbuj4vsvvobvtc49tl07dvk6do7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDh_F-Vqr5WZxq7yliM10lm5e59WLclvw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766958635088-guakkbuj4vsvvobvtc49tl07dvk6do7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

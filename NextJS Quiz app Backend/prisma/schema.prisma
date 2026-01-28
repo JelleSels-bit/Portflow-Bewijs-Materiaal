@@ -1,0 +1,154 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider   = "prisma-client"
+  engineType = "client"
+  output     = "../src/generated/prisma"
+  previewFeatures = ["typedSql"]
+}
+
+// Voeg deze generator toe!
+generator json {
+  provider = "prisma-json-types-generator"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  User
+  Admin
+}
+
+enum Status {
+  Pending
+  Active
+  Finished
+}
+
+enum Difficulty {
+  Easy
+  Medium
+  Hard
+}
+
+model User {
+  id       String    @id @unique @default(uuid()) @db.Uuid
+  email    String    @unique @db.VarChar(255)
+  password String
+  username String
+  role     Role      @default(User)
+
+  //Navigation Property's
+  sessions Session[]
+  gameSessions UserGameSession[]
+  gameSessionsHosted GameSession[]
+
+}
+
+model Session {
+  id          String   @id @unique @default(uuid()) @db.Uuid
+  activeFrom  DateTime @default(now())
+  activeUntil DateTime
+  userId      String   @db.Uuid
+
+  //Navigation Property's
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Quiz {
+  id    String   @id @unique @default(uuid()) @db.Uuid
+  title String
+  description String
+  difficulty Difficulty
+
+  //Navigation Property's
+  questions Question[]
+  themes QuizTheme[]
+  gameSessions GameSession[]
+}
+
+model Question {
+  id                  String   @id @unique @default(uuid()) @db.Uuid
+  question            String
+  points              Int
+  imageUrl            String?
+  answerExplanation   String
+  createdAt           DateTime @default(now())
+  quizId              String @db.Uuid
+  /// [AnswerData]
+  answers             Json   @default("[]") @db.JsonB
+  //Navigation Property's
+  themes QuestionTheme[]
+  quiz Quiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
+
+
+}
+
+model Theme {
+  id    String   @id @unique @default(uuid()) @db.Uuid
+  name String
+  description String
+
+  //Navigation Property's
+  quizzes QuizTheme[]
+  questions QuestionTheme[]
+}
+
+model QuestionTheme {
+  @@id([questionId, themeId])
+  questionId String @db.Uuid
+  themeId String @db.Uuid
+
+  //Navigation Property's
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  theme Theme @relation(fields: [themeId], references: [id], onDelete: Cascade)
+
+
+}
+
+model QuizTheme {
+  @@id([quizId, ThemeId])
+  quizId String @db.Uuid
+  ThemeId String @db.Uuid
+
+  //Navigation Property's
+  quiz Quiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  theme Theme @relation(fields: [ThemeId], references: [id], onDelete: Cascade)
+
+
+}
+
+model GameSession {
+  id    String   @id @unique @default(uuid()) @db.Uuid
+  maxPlayers  Int
+  status Status @default(Pending)
+  hostId String @db.Uuid
+  quizId String @db.Uuid
+  roomcode String @unique
+
+  //Navigation Property's
+  players UserGameSession[]
+  user User @relation(fields: [hostId], references: [id], onDelete: Cascade)
+  quiz Quiz @relation(fields: [quizId], references: [id], onDelete: Cascade)
+}
+
+model UserGameSession {
+  id String  @id @unique @default(uuid()) @db.Uuid
+  score Int @default(0)
+  joinedAt DateTime @default(now())
+  userId String @db.Uuid
+  gameSessionId String @db.Uuid
+
+  //Navigation Property's
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  gameSession GameSession  @relation(fields: [gameSessionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, gameSessionId])
+}
