@@ -1,9 +1,5 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/ZQkUYFyq)
 
 # Quiz beheer app for now:
-
-
-
 
 ### Login
 Admin:
@@ -57,12 +53,45 @@ ERD: <br>
 ### Unfinished:
 
 In de toekomst wil ik de app nog uitbreiden zodat hij ook het spelen quiz / statistieken bekijken toelaat.
-
-
-
-
-
-
 Met vriendelijke groeten Jelle Sels
+
+
+### Screenshots:
+![](./public/Assets/HomePageUitgelogd.png) <br> <br>
+![](./public/Assets/LoginScreen.png)<br> <br>
+![](./public/Assets/RegistrerenForm.png)<br> <br>
+![](./public/Assets/ProfileMock.png)<br> <br>
+![](./public/Assets/dropDown.png)<br> <br>
+![](./public/Assets/DemoMode.png)<br> <br>
+
+![](./public/Assets/HostQuiz.png)<br> <br>
+![](./public/Assets/JoinQuiz.png)<br> <br>
+![](./public/Assets/WaitingRoom.png)<br> <br>
+
+![](./public/Assets/GebruikersCRUD.png)<br> <br>
+![](./public/Assets/GebruikerDelete.png)<br> <br>
+![](./public/Assets/GebruikerEdit.png)<br> <br>
+![](./public/Assets/GebruikerSearch.png)<br> <br>
+
+![](./public/Assets/QuizCRUD.png)<br> <br>
+![](./public/Assets/QuizSearch.png)<br> <br>
+![](./public/Assets/CreateQuiz.png)<br> <br>
+![](./public/Assets/QuizDelete.png)<br> <br>
+![](./public/Assets/QuizDetail.png)<br> <br>
+![](./public/Assets/QuizEdit1.png)<br> <br>
+![](./public/Assets/QuizEdit2.png)<br> <br>
+![](./public/Assets/NieuweVraagAanQuiz.png)<br> <br>
+
+![](./public/Assets/ThemaCRUD.png)<br> <br>
+![](./public/Assets/ThemaSearch.png)<br> <br>
+![](./public/Assets/ThemaDelete.png)<br> <br>
+![](./public/Assets/ThemaEdit.png)<br> <br>
+
+
+
+
+
+
+
 
 

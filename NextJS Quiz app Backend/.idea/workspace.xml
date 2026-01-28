@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34815da0-b597-4dbe-80eb-5645965cf956" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/settings/SettingsClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/settings/SettingsClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/navbarClient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/navbarClient.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ui/profile-dropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/profile-dropdown.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/proxy/redirectProxy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/proxy/redirectProxy.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverFunctions/gameSession.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverFunctions/gameSession.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverFunctions/question.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverFunctions/question.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverFunctions/quiz.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverFunctions/quiz.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serverFunctions/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/serverFunctions/theme.ts" afterDir="false" />
-    </list>
+    <list default="true" id="34815da0-b597-4dbe-80eb-5645965cf956" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,7 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
@@ -116,6 +105,7 @@
       <workItem from="1768215864129" duration="36887000" />
       <workItem from="1768299441391" duration="33094000" />
       <workItem from="1768389692542" duration="5110000" />
+      <workItem from="1769610856659" duration="8000" />
     </task>
     <servers />
   </component>
