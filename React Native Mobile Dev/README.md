@@ -52,3 +52,23 @@ Dit is hoe favorieten worden opgeslagen in Firebase:
 
 ![](assets/images/imgFirebaseFav.png)
 
+
+### Screenshots:
+![](./assets/HomeScreen.png) <br> <br>
+
+![](./assets/apiSponBeer.png) <br> <br>
+![](./assets/CustomBeerSpin.png) <br> <br>
+![](./assets/FavBeerSpin.png) <br> <br>
+
+![](./assets/ApiBeerDetailScreen.png)<br> <br>
+![](./assets/CustomBeerDetail.png) <br> <br>
+
+![](./assets/MyBeersScreen.png) <br> <br>
+![](./assets/BeerCreateScreen.png) <br> <br>
+![](./assets/BeerEditScreen.png) <br> <br>
+
+![](./assets/FavorietenIndex.png) <br> <br>
+![](./assets/UitlogScreen.png) <br> <br>
+
+
+
