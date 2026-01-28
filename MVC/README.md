@@ -18,36 +18,36 @@ Binnen dit project heb ik de volgende pagina’s gebouwd of eraan meegewerkt:
 
 ![](./MvcAssets/HomePage.png)
 
-![](/MvcAssets/Admin%20beheer%20panel.png)
+![](./MvcAssets/Admin%20beheer%20panel.png)
 
-![](/MvcAssets/MailsBeherenPage.png)
+![](./MvcAssets/MailsBeherenPage.png)
 
-![](/MvcAssets/MailsBewerkenPage.png)
+![](./MvcAssets/MailsBewerkenPage.png)
 
-![](/MvcAssets/MailAanmakenPage.png)
+![](./MvcAssets/MailAanmakenPage.png)
 
 ![](/MvcAssets/MailsVerwijderen.png)
 
-![](/MvcAssets/InlogScherm.png)
+![](./MvcAssets/InlogScherm.png)
 
-![](/MvcAssets/WachtwoordVergetenPage.png)
+![](./MvcAssets/WachtwoordVergetenPage.png)
 
-![](/MvcAssets/wachtwoordResetAanvragen.png)
+![](./MvcAssets/wachtwoordResetAanvragen.png)
 
-![](/MvcAssets/MailWWReset.png)
+![](./MvcAssets/MailWWReset.png)
 
-![](/MvcAssets/CodeInvullenVeld.png)
+![](./MvcAssets/CodeInvullenVeld.png)
 
-![](/MvcAssets/WachtWoordInvoerVeld.png)
+![](./MvcAssets/WachtWoordInvoerVeld.png)
 
-![](/MvcAssets/ToegangGeweigerd.png)
+![](./MvcAssets/ToegangGeweigerd.png)
 
-![](/MvcAssets/LoggingNaarDBAll.png)
+![](./MvcAssets/LoggingNaarDBAll.png)
 
-![](/MvcAssets/LoggingNaarDBAfrekenen.png)
+![](./MvcAssets/LoggingNaarDBAfrekenen.png)
 
-![](/MvcAssets/LoggingNaarDBBestelling.png)
+![](./MvcAssets/LoggingNaarDBBestelling.png)
 
-![](/MvcAssets/LoggingNaarDBEnquete.png)
+![](./MvcAssets/LoggingNaarDBEnquete.png)
 
-![](/MvcAssets/LoggingNaarDBReservatie.png)
+![](./MvcAssets/LoggingNaarDBReservatie.png)
